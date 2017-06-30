@@ -49,6 +49,10 @@ app.get('/',(req,res) => {
 
 });
 
+// to direct every other request to index.html
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 app.listen('3000',() => {
   console.log('Listening to port 3000');
